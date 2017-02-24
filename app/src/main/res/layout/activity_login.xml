@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:Android="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/phone_login_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+            <!--分隔空间-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/app_main" />
+
+            <!--页面标题“登录”-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:background="@color/app_main"
+                android:text="@string/login"
+                android:textColor="@color/tv_White"
+                android:textSize="20sp"
+                />
+
+            <!--分隔空间-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/app_main" />
+
+            <!--大灰色分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/bg_Gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!--手机号输入框-->
+                <EditText
+                    android:id="@+id/prompt_phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:minWidth="200px"
+                    android:inputType="number"
+                    android:hint="@string/prompt_phone"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    />
+                <!--发送sms按钮-->
+                <Button
+                    android:id="@+id/getSMSCode"
+                    android:layout_width="106dp"
+                    android:layout_height="40dp"
+                    android:text="@string/action_getSms"
+                    android:layout_gravity="center"
+                    android:background="@color/green"
+                    android:textColor="@color/tv_White"/>
+
+                <!--尾部留白-->
+                <View
+                    android:layout_width="8dp"
+                    android:layout_height="match_parent"
+                    android:background="@null" />
+
+            </LinearLayout >
+
+            <!--小分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_Gray" />
+
+            <!--短信息输入框-->
+            <EditText
+                android:id="@+id/SMSCode"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="8dp"
+                android:inputType="number"
+                android:hint="@string/prompt_smscode"
+                android:background="@null"
+                android:maxLines="1"
+                />
+
+            <!--小分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_Gray" />
+
+            <!--用户提示框-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/warnInfo"/>
+
+            <!--大灰色分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="18dp"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <!-- Login progress -->
+                <ProgressBar
+                    android:id="@+id/login_progress"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_gravity="center_horizontal"/>
+
+                <!--登录按钮-->
+                <Button
+                    android:id="@+id/loginBT"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/login"
+                    android:background="@color/green"
+                    android:textColor="@color/tv_White"
+                    android:textSize="20sp"/>
+
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

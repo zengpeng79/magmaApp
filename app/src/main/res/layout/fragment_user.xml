@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="magma.com.anshan.home.UserFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+                <!--分隔空间-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/app_main" />
+
+                <!--页面标题“我的”-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:background="@color/app_main"
+                    android:text="我的"
+                    android:textColor="@color/tv_White"
+                    android:textSize="20sp"
+                    />
+
+                <!--分隔空间-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:background="@color/app_main" />
+
+                <!--圆形头像、用户名、手机号、箭头-->
+                <LinearLayout
+                    android:id="@+id/user_LinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/app_main">
+
+                        <View
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/app_main" />
+
+                        <magma.com.anshan.util.CircleImageView
+                            android:id="@+id/user_circleImage"
+                            android:layout_width="90dp"
+                            android:layout_height="90dp"
+                            android:src="@mipmap/hugh"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="@color/bg_White"
+                            />
+                        <View
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/app_main" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:orientation="horizontal"
+                            >
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_centerHorizontal="false"
+                                    android:layout_centerVertical="true">
+
+                                <TextView
+                                    android:id="@+id/tx_userNmae"
+                                    android:text="@string/loginnow"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/tv_White"/>
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="5dp"
+                                    android:background="@color/app_main" />
+                                <TextView
+                                    android:id="@+id/tx_mobile"
+                                    android:text="@string/login_tip"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/tv_White"
+                                    />
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:id="@+id/userDetail"
+                                    android:layout_width="45dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentRight="true"
+                                    android:padding="15dp"
+                                    android:src="@mipmap/user_next" />
+
+                        </RelativeLayout>
+
+
+
+
+
+                </LinearLayout>
+
+                <!--分隔空间-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:background="@color/app_main" />
+
+                <!--大灰色分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/bg_Gray" />
+
+                <!--我的地址-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/userAddress"
+                            android:layout_width="45dp"
+                            android:layout_height="match_parent"
+                            android:padding="15dp"
+                            android:src="@mipmap/user_address" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@color/bg_White"
+                            android:text="收货地址"
+                            android:padding="15dp"
+                            android:textColor="@color/tv_Black"
+                            android:textSize="18sp"
+                            />
+
+                </LinearLayout>
+
+                <!--小分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/bg_Gray" />
+
+                <!--我的收藏-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/userAddress1"
+                            android:layout_width="45dp"
+                            android:layout_height="match_parent"
+                            android:padding="15dp"
+                            android:src="@mipmap/user_address" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@color/bg_White"
+                            android:text="我的收藏"
+                            android:padding="15dp"
+                            android:textColor="@color/tv_Black"
+                            android:textSize="18sp"
+                            />
+
+                </LinearLayout>
+
+                <!--小分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/bg_Gray" />
+
+                <!--帮助与反馈-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/userAddress2"
+                            android:layout_width="45dp"
+                            android:layout_height="match_parent"
+                            android:padding="15dp"
+                            android:src="@mipmap/user_address" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@color/bg_White"
+                            android:text="帮助与反馈"
+                            android:padding="15dp"
+                            android:textColor="@color/tv_Black"
+                            android:textSize="18sp"
+                            />
+
+                </LinearLayout>
+
+                <!--小分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/bg_Gray" />
+
+                <!--合作中心-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/user_corporation"
+                            android:layout_width="45dp"
+                            android:layout_height="match_parent"
+                            android:padding="15dp"
+                            android:src="@mipmap/user_address" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@color/bg_White"
+                            android:text="合作中心"
+                            android:padding="15dp"
+                            android:textColor="@color/tv_Black"
+                            android:textSize="18sp"
+                            />
+
+                </LinearLayout>
+
+                <!--小分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/bg_Gray" />
+
+                <!--更多-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                        <ImageView
+                            android:id="@+id/user_more"
+                            android:layout_width="45dp"
+                            android:layout_height="match_parent"
+                            android:padding="15dp"
+                            android:src="@mipmap/user_address" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:background="@color/bg_White"
+                            android:text="更多"
+                            android:padding="15dp"
+                            android:textColor="@color/tv_Black"
+                            android:textSize="18sp"
+                            />
+
+                </LinearLayout>
+
+                <!--大分割线-->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/bg_Gray" />
+
+        </LinearLayout>
+
+
+
+</ScrollView>
