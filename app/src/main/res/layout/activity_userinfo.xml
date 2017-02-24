@@ -106,31 +106,204 @@
                 android:layout_height="1dp"
                 android:background="@color/bg_Gray" />
 
-            <!--合作中心-->
+            <!--手机号码-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
-                <ImageView
-
-                    android:layout_width="45dp"
-                    android:layout_height="match_parent"
-                    android:padding="15dp"
-                    android:src="@mipmap/user_address" />
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
                     android:background="@color/bg_White"
-                    android:text="合作中心"
+                    android:text="手机"
+                    android:padding="15dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/tv_Black"
+                    android:textSize="18sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@color/bg_White"
+                    android:text="18518716226"
                     android:padding="15dp"
                     android:textColor="@color/tv_Black"
                     android:textSize="18sp"
                     />
 
             </LinearLayout>
+
+            <!--小分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_Gray" />
+
+            <!--微信-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/bg_White"
+                    android:text="微信"
+                    android:padding="15dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/tv_Black"
+                    android:textSize="18sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@color/bg_White"
+                    android:text="18518716226"
+                    android:padding="15dp"
+                    android:textColor="@color/tv_Black"
+                    android:textSize="18sp"
+                    />
+
+            </LinearLayout>
+
+            <!--小分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_Gray" />
+
+            <!--QQ号码-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/bg_White"
+                    android:text="QQ号码"
+                    android:padding="15dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/tv_Black"
+                    android:textSize="18sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@color/bg_White"
+                    android:text="1859586108234"
+                    android:padding="15dp"
+                    android:textColor="@color/tv_Black"
+                    android:textSize="18sp"
+                    />
+
+            </LinearLayout>
+
+
+
+
+            <!--小分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/bg_Gray" />
+
+            <!--登录密码-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@color/bg_White"
+                    android:text="登录密码"
+                    android:padding="15dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/tv_Black"
+                    android:textSize="18sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:background="@color/bg_White"
+                    android:text="123456"
+                    android:padding="15dp"
+                    android:textColor="@color/tv_Black"
+                    android:textSize="18sp"
+                    />
+
+            </LinearLayout>
+
+            <!--大灰色分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/bg_Gray" />
+
+
+            <!--退出登录-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <!-- Login progress -->
+                <ProgressBar
+                    android:id="@+id/login_progress"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:layout_gravity="center_horizontal"/>
+
+                <!--登录按钮-->
+                <Button
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="退出登录"
+                    android:background="@color/bg_White"
+                    android:textColor="@color/tv_Red"
+                    android:textSize="20sp"/>
+
+
+
+            </RelativeLayout>
 
 
         </LinearLayout>

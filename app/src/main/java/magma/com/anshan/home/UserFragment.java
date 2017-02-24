@@ -53,6 +53,20 @@ public class UserFragment extends Fragment {
         userLinearLayout = (View)view.findViewById(R.id.user_LinearLayout);
         tx_userNmae = (TextView)view.findViewById(R.id.tx_userNmae);
         tx_mobile = (TextView)view.findViewById(R.id.tx_mobile);
+        if(isLoginValid()!= true) {
+            tx_userNmae.setText(R.string.loginnow);
+            tx_mobile.setText(R.string.login_tip);
+            Log.d(TAG, "onActivityResult: RESULT_CANCELED");
+        }
+        else{
+            SharedPreferences sharedPreferences= getActivity().getSharedPreferences("userInfo",
+                    Activity.MODE_PRIVATE);
+            String userName = sharedPreferences.getString(USER_NAME,"");
+            String mobile = sharedPreferences.getString(USER_MOBILE,"");
+            tx_userNmae.setText(userName);
+            tx_mobile.setText(mobile);
+        }
+
         userLinearLayout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(isLoginValid()!= true) {
@@ -61,7 +75,9 @@ public class UserFragment extends Fragment {
                     getActivity().overridePendingTransition(R.anim.cu_push_right_in, 0);
                 }
                 else{
-//                    TODO personal info Actitity
+                    Intent intent=new Intent(getActivity(), UserInfoActivity.class);
+                    startActivityForResult(intent, requestCode);
+                    getActivity().overridePendingTransition(R.anim.cu_push_right_in, 0);
                 }
             }
 
