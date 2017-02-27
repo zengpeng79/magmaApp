@@ -101,35 +101,45 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 if (result == SMSSDK.RESULT_COMPLETE) {
                     //回调完成
-                    if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
-                        if (result == SMSSDK.RESULT_COMPLETE) {
+                    switch(event){
+                        case SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE:
+                            Log.d(TAG, "afterEvent: verifySuccess");
                             toast("验证成功");
                             attemptLogin(true);
-                        } else {
-//                            toast("验证失败");
-                            attemptLogin(false);
-                        }
-                    }else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
-                        if (result == SMSSDK.RESULT_COMPLETE) {
-                            toast("获取验证码成功");
+                            break;
+                        case SMSSDK.EVENT_GET_VERIFICATION_CODE:
+                            if (result == SMSSDK.RESULT_COMPLETE) {
+                                toast("获取验证码成功");
 
-                            //默认的智能验证是开启的,我已经在后台关闭
-                        } else {
-                            toast("获取验证码失败");
-                        }
-                    }else if (event ==SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES){
-                        //返回支持发送验证码的国家列表
+                                //默认的智能验证是开启的,我已经在后台关闭
+                            } else {
+                                toast("获取验证码失败");
+                            }
+                            break;
+                        case SMSSDK.EVENT_GET_SUPPORTED_COUNTRIES:
+                            break;
                     }
+
                 }else{
                     ((Throwable)data).printStackTrace();
                     String Throwable = String.valueOf((Throwable)data);
-                    String[] detail = Throwable.split("\"");
-                    toast(detail[detail.length - 2]);
+                    if(Throwable.contains("\"")){
+                        String[] detail = Throwable.split("\"");
+                        toast(detail[detail.length - 2]);
+                    }
+                    else
+                    {
+                        toast("获取验证码失败");
+                    }
                     attemptLogin(false);
                 }
+
             }
+
         };
         SMSSDK.registerEventHandler(eh); //注册短信回调
+
+
     }
 
     private void attemptLogin(Boolean feedback) {
@@ -219,9 +229,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String userPhone= prompt_phone.getText().toString();
         SMSSDK.submitVerificationCode("86", userPhone, SMSVerifyCode);
     }
-    /**
-     * 显示时间在梯减的文本框
-     */
+
+//     显示时间在梯减的文本框
     public void showTime() {
         new Thread(new Runnable() {
             @Override
@@ -269,6 +278,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onBackPressed();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SMSSDK.unregisterAllEventHandler();    }
+
     public class LoginTask extends AsyncTask<Void, Void, String> {
 
         private final String mPhone;
@@ -307,6 +321,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Log.d(TAG, "doInBackground: Result_noCallback");
             return Result_noCallback;
         }
+
 
         @Override
         protected void onPostExecute(String result) {

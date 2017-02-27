@@ -31,6 +31,7 @@ import static magma.com.anshan.home.LoginActivity.USER_TOKENVALIDTIME;
 
 public class UserFragment extends Fragment {
 
+    public static final int RESULT_LOGOUT= 2;
     private CircleImageView userCircleImage;
     private View userLinearLayout ;
     private int requestCode = 0;
@@ -98,9 +99,14 @@ public class UserFragment extends Fragment {
                 tx_mobile.setText(mobile);
                 break;
             case RESULT_CANCELED:
+/*                tx_userNmae.setText(R.string.loginnow);
+                tx_mobile.setText(R.string.login_tip);*/
+                Log.d(TAG, "onActivityResult: RESULT_CANCELED");
+                break;
+            case RESULT_LOGOUT:
                 tx_userNmae.setText(R.string.loginnow);
                 tx_mobile.setText(R.string.login_tip);
-                Log.d(TAG, "onActivityResult: RESULT_CANCELED");
+                Log.d(TAG, "onActivityResult: RESULT_LOGOUT");
                 break;
             default:
                 break;
@@ -118,7 +124,10 @@ public class UserFragment extends Fragment {
         Long mLoginTimeStamp = loginTimestamp.getTime();
 //        mLoginTimeStamp = mLoginTimeStamp * 10;
         Log.d(TAG, "isLoginValid: mLoginTimeStamp" + mLoginTimeStamp);
-        Long mTokenValidTime =Long.valueOf(tokenValidTime);
+        Long mTokenValidTime =Long.valueOf(0);
+        if(tokenValidTime != ""){
+             mTokenValidTime =Long.valueOf(tokenValidTime);
+        }
         Log.d(TAG, "isLoginValid: mTokenValidTime" + mTokenValidTime);
         if(isLogin != true){
             Log.d(TAG, "isLoginValid: isLogin != \"true\"");

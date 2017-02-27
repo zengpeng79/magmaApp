@@ -291,9 +291,9 @@
                     android:visibility="gone"
                     android:layout_gravity="center_horizontal"/>
 
-                <!--登录按钮-->
+                <!--退出登录按钮-->
                 <Button
-
+                    android:id="@+id/logoutBT"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="退出登录"
